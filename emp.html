@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>EMPLOYEE INFORMATION FORM</title>
+	<style type="text/css">
+		#table1{background-color: pink;}
+	</style>
+	<script type="text/javascript">
+		function validate(){
+			var firstname= document.getElementById('firstname');
+			var middlename=document.getElementById('middlename');
+			var lastname= document.getElementById('lastname');
+			var email=document.getElementById('email');
+			var date=document.getElementById('date');
+			var mobnumber=document.getElementById('mobnumber');
+			var address=document.getElementById('address');
+			var passyr=document.getElementById('passyr');
+			var cpi=document.getElementById('passyr');
+
+			if (firstname.value=="") {
+				document.getElementById('errfirstname').innerHTML=("Please Enter First Name.")
+				errfirstname.style.color="red"
+			}
+			else
+			{
+				document.getElementById('errfirstname').innerHTML=("")
+				errfirstname.style.color="red"
+			}
+
+			if (middlename.value=="") {
+				document.getElementById('errmiddlename').innerHTML=("Please Enter Middle Name.")
+				errmiddlename.style.color="red"
+			}
+			else
+			{
+				document.getElementById('errmiddlename').innerHTML=("")
+				errmiddlename.style.color="red"
+			}
+
+			if (lastname.value=="") {
+				document.getElementById('errlastname').innerHTML=("Please Enter Last Name.")
+				errlastname.style.color="red"
+			}
+			else
+			{
+				document.getElementById('errlastname').innerHTML=("")
+				errlastname.style.color="red"
+			}
+
+			if (email.value=="") {
+				document.getElementById('erremail').innerHTML=("Please Enter Email.")
+				erremail.style.color="red"
+			}
+			else
+			{
+				document.getElementById('erremail').innerHTML=("")
+				erremail.style.color="red"
+			}
+
+			if (date.value=="") {
+				document.getElementById('errdate').innerHTML=("Please Enter Date.")
+				errdate.style.color="red"
+			}
+			else
+			{
+				document.getElementById('errdate').innerHTML=("")
+				errdate.style.color="red"
+			}
+
+			if (mobnumber.value=="") {
+				document.getElementById('errmobnumber').innerHTML=("Please Enter Mobile Number.")
+				errmobnumber.style.color="red"
+			}
+			else
+			{
+				document.getElementById('errmobnumber').innerHTML=("")
+				errmobnumber.style.color="red"
+			}
+
+			if (address.value=="") {
+				document.getElementById('erraddress').innerHTML=("Please Enter Address.")
+				erraddress.style.color="red"
+			}
+			else
+			{
+				document.getElementById('erraddress').innerHTML=("")
+				erraddress.style.color="red"
+			}
+
+			if (passyr.value=="") {
+				document.getElementById('errpassyr').innerHTML=("Please Enter Passing Year.")
+				errpassyr.style.color="red"
+			}
+			else
+			{
+				document.getElementById('errpassyr').innerHTML=("")
+				errpassyr.style.color="red"
+			}
+
+			if (cpi.value=="") {
+				document.getElementById('errcpi').innerHTML=("Please Enter CPI.")
+				errcpi.style.color="red"
+			}
+			else
+			{
+				document.getElementById('errcpi').innerHTML=("")
+				errcpi.style.color="red"
+			}
+		}
+	</script>
+	<link rel="stylesheet" type="text/css" href="trial.css">
+</head>
+<body class="def" bgcolor="orange">
+	<script language="JavaScript">
+
+
+
+//Comment trail script- By Kurt (kurt.grigg@virgin.net)
+
+//Script featured on Dynamic Drive
+
+//Visit http://www.dynamicdrive.com for this script and more
+
+
+
+colours=new Array('green','red','orange','yellow','blue','pink','purple','black','grey')
+
+n = 30;
+
+y = 0;
+
+x = 0;
+
+n6=(document.getElementById&&!document.all);
+
+ns=(document.layers);
+
+ie=(document.all);
+
+d=(ns||ie)?'document.':'document.getElementById("';
+
+a=(ns||n6)?'':'all.';
+
+n6r=(n6)?'")':'';
+
+s=(ns)?'':'.style';
+
+if (ns){
+
+for (i = 0; i < n; i++)
+
+document.write('<layer name="dots'+i+'" top=0 left=0 width='+i/2+' height='+i/2+' bgcolor=#ff0000></layer>');
+
+}
+
+if (ie)
+
+document.write('<div id="con" style="position:absolute;top:0px;left:0px"><div style="position:relative">');
+
+if (ie||n6){
+
+for (i = 0; i < n; i++)
+
+document.write('<div id="dots'+i+'" style="position:absolute;top:0px;left:0px;width:'+i/2+'px;height:'+i/2+'px;background:#ff0000;font-size:'+i/2+'"></div>');
+
+}
+
+if (ie)
+
+document.write('</div></div>');
+
+(ns||n6)?window.captureEvents(Event.MOUSEMOVE):0;
+
+function Mouse(evnt){
+
+y = (ns||n6)?evnt.pageY+4 - window.pageYOffset:event.y+4;
+
+x = (ns||n6)?evnt.pageX+1:event.x+1;
+
+}
+
+(ns)?window.onMouseMove=Mouse:document.onmousemove=Mouse;
+
+function animate(){
+
+o=(ns||n6)?window.pageYOffset:0;
+
+if (ie)con.style.top=document.body.scrollTop + 'px';
+
+for (i = 0; i < n; i++){
+
+var temp1 = eval(d+a+"dots"+i+n6r+s);
+
+
+
+randcolours = colours[Math.floor(Math.random()*colours.length)];
+
+(ns)?temp1.bgColor = randcolours:temp1.background = randcolours; 
+
+if (i < n-1){
+
+ var temp2 = eval(d+a+"dots"+(i+1)+n6r+s);
+
+ temp1.top = parseInt(temp2.top) + 'px';
+
+ temp1.left = parseInt(temp2.left) + 'px';
+
+ } 
+
+else{
+
+ temp1.top = y+o + 'px';
+
+ temp1.left = x + 'px';
+
+ }
+
+}
+
+setTimeout("animate()",100);
+
+}
+
+animate();
+
+// -->
+
+</script>
+	<table align="center" cellpadding="20px"><tr><td>
+	<img src="./e.jpeg" height="100%" width="100%">
+	</td></tr></table>
+	<u><i><font color ="red"><h1 id="test2" align="center" style="background-color: gray; font-size: 40px">Employee Information Form</h1></font></i></u>
+	<form>
+		<table class="abc" border="20" align="center" cellpadding="20px">
+			<tr>
+				<td>
+		<table id="table1" align="center" frame="border" width="100%" cellpadding="15px">
+			<tr>
+				<td>Full Name</td>
+				<td>:</td>
+				<td><input type="text" id="firstname" name="firstname" placeholder="First Name Here" ><br><div id="errfirstname"></div></td>
+				<td><input type="text" id="middlename" name="middlename" placeholder="Middle Name Here" ><br><div id="errmiddlename"></div></td>
+				<td><input type="text" id="lastname" name="lastname" placeholder="Last Name Here" ><br><div id="errlastname"></div></td>
+			</tr>
+			<tr>
+				<td>Email</td>
+				<td>:</td>
+				<td><input type="email" id="email" name="email" placeholder="email@website.com"><br><div id="erremail"></div></td>
+				<td>Gender :</td>
+				<td><input type="radio" name="gender">Male<br>
+				<input type="radio" name="gender">Female<br>
+			<input type="radio" name="gender">Other</td>
+			</tr>
+			<tr>
+				<td>Date Of Birth</td>
+				<td>:</td>
+				<td><input type="date" name="date" id="date" ><br><div id="errdate"></div></td>
+				<td>Nationality:</td>
+				<td><select>
+					<option>India</option>
+					<option>United States Of America</option>
+					<option>United Kingdom</option>
+					<option>Australia</option>
+					<option>China</option>
+					<option>Japan</option>
+					<option>Russia</option>
+					<option>United Arab Emirates</option>
+					<option>South Africa</option>
+				</select></td>
+			</tr>
+			<tr>
+				
+			</tr>
+			<tr>
+				<td>Qualification</td>
+				<td>:</td>
+				<td><select>
+					<option>Select any one</option>
+					<option>10th Complete</option>
+					<option>12th Complete</option>
+					<option>Bachelor's Degree Complete</option>	
+				</select></td>
+				<td>Mobile Number:</td>
+				<td><input type="text" name="mobnumber" id="mobnumber" placeholder="Mobile Number Here"><br><div id="errmobnumber"></div></td>
+			</tr>
+			<tr>
+				<td>Address</td>
+				<td>:</td>
+				<td><textarea rows="3" name="Address" id="address"></textarea><br><div id="erraddress"></div></td>
+				<td>Highest Degree:</td>
+				<td><select>
+					<option>B.E.</option>
+					<option>B.Com.</option>
+					<option>B.A.</option>
+					<option>B.Sc.</option>
+					<option>M.com</option>
+					<option>M.Sc.</option>
+					<option>M.A.</option>
+					<option>Ph.D.</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td>University</td>
+				<td>:</td>
+				<td><select>
+					<option>GTU</option>
+					<option>Marwadi Univesity</option>
+					<option>PDPU</option>
+					<option>Saurashtra University</option>
+					<option>DDU</option>
+					<option>Nirma University</option>
+				</select></td>
+				<td>Passing Year:</td>
+				<td><input type="text" name="passyr" placeholder="Passing Year Here" id="passyr"><br><div id="errpassyr"></div></td>
+			</tr>
+			<tr>
+				<td>CPI</td>
+				<td>:</td>
+				<td><input type="text" name="cpi" placeholder="CPI Here"  id="cpi"><br><div id="errcpi"></div></td>
+			</tr>
+			<tr>
+				
+			</tr>
+			<tr>
+				<td colspan="5" align="center"><input type="button" name="submit" value="Register" onclick="validate()"></td>
+			</tr>
+			
+		</table>
+	</td>
+		</tr>
+		</table>
+	</form>
+</body>
+</html>

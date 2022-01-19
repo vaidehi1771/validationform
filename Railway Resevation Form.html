@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		function checklogin(){
+			var FirstName=document.getElementById('FirstName').value;
+			var MiddelName=document.getElementById('MiddelName').value;
+			var LastName=document.getElementById('LastName').value;
+			var Email=document.getElementById('Email').value;
+			var Address=document.getElementById('Address').value;
+			var MobileNo=document.getElementById('MobileNo').value;
+			var PincodeNo=document.getElementById('PincodeNo').value;
+			var pattern1="^[a-zA-Z]+$";
+			var reg1= new RegExp(pattern1);
+			var pattern2="^[a-zA-Z@]"; 
+			var reg2 = new RegExp(pattern2);
+			var pattern3="^[0-9]{10}$"; 
+			var reg3 = new RegExp(pattern3);
+			var pattern4="^[a-zA-Z0-9/,.:]+$"; 
+			var reg4 = new RegExp(pattern4);
+			var pattern5="^[0-9]{6}$"; 
+			var reg5 = new RegExp(pattern5);
+		if(reg1.test(FirstName))
+			{
+				document.getElementById('errFirstName').innerHTML="";
+				errFirstName.style.color="red"
+			}
+		else
+			{
+				document.getElementById('errFirstName').innerHTML="Please Enter Valid Name.";
+				errFirstName.style.color="red"
+			}
+
+		if(reg1.test(MiddelName))
+			{
+				document.getElementById('errMiddelName').innerHTML="";
+				errMiddelName.style.color="red"
+			}
+		else
+			{
+				document.getElementById('errMiddelName').innerHTML="Please Enter Valid Name.";
+				errMiddelName.style.color="red"
+			}
+
+		if(reg1.test(LastName))
+			{
+				document.getElementById('errLastName').innerHTML="";
+				errLastName.style.color="red"
+			}
+		else
+			{
+				document.getElementById('errLastName').innerHTML="Please Enter Valid Name.";
+				errLastName.style.color="red"
+			}
+
+		if(reg2.test(Email))
+			{
+				document.getElementById('errEmail').innerHTML="";
+				errEmail.style.color="red"
+			}
+		else
+			{
+				document.getElementById('errEmail').innerHTML="Please Enter Valid Email.";
+				errEmail.style.color="red"
+			}
+		if(reg3.test(MobileNo))
+			{
+				document.getElementById('errMobile').innerHTML="";
+				errMobile.style.color="red"
+			}
+		else
+			{
+				document.getElementById('errMobile').innerHTML="Please Enter Valid Mobile No.";
+				errMobile.style.color="red"
+			}
+		if(reg4.test(Address))
+			{
+				document.getElementById('errAddress').innerHTML="";
+				errAddress.style.color="red"
+			}
+		else
+			{
+				document.getElementById('errAddress').innerHTML="Please Enter Valid Address";
+				errAddress.style.color="red"
+			}
+		if(reg5.test(PincodeNo))
+			{
+				document.getElementById('errPincodeNo').innerHTML="";
+				errPincodeNo.style.color="red"
+			}
+		else
+			{
+				document.getElementById('errPincodeNo').innerHTML="Please Enter Valid Address";
+				errPincodeNo.style.color="red"
+			}
+
+	}
+	</script>
+</head>
+<body bgcolor="pink">
+		<script language="JavaScript">
+//Comment trail script- By Kurt (kurt.grigg@virgin.net)
+//Script featured on Dynamic Drive
+//Visit http://www.dynamicdrive.com for this script and more
+colours=new Array('green','red','orange','yellow','blue','pink','purple','black','grey','meganta')
+n = 30;
+y = 0;
+x = 0;
+n6=(document.getElementById&&!document.all);
+ns=(document.layers);
+ie=(document.all);
+d=(ns||ie)?'document.':'document.getElementById("';
+a=(ns||n6)?'':'all.';
+n6r=(n6)?'")':'';
+s=(ns)?'':'.style';
+if (ns){
+for (i = 0; i < n; i++)
+document.write('<layer name="dots'+i+'" top=0 left=0 width='+i/2+' height='+i/2+' bgcolor=#ff0000></layer>');
+}
+if (ie)
+document.write('<div id="con" style="position:absolute;top:0px;left:0px"><div style="position:relative">');
+if (ie||n6){
+for (i = 0; i < n; i++)
+document.write('<div id="dots'+i+'" style="position:absolute;top:0px;left:0px;width:'+i/2+'px;height:'+i/2+'px;background:#ff0000;font-size:'+i/2+'"></div>');
+}
+if (ie)
+document.write('</div></div>');
+(ns||n6)?window.captureEvents(Event.MOUSEMOVE):0;
+function Mouse(evnt){
+y = (ns||n6)?evnt.pageY+4 - window.pageYOffset:event.y+4;
+x = (ns||n6)?evnt.pageX+1:event.x+1;
+}
+(ns)?window.onMouseMove=Mouse:document.onmousemove=Mouse;
+function animate(){
+o=(ns||n6)?window.pageYOffset:0;
+if (ie)con.style.top=document.body.scrollTop + 'px';
+for (i = 0; i < n; i++){
+var temp1 = eval(d+a+"dots"+i+n6r+s);
+randcolours = colours[Math.floor(Math.random()*colours.length)];
+(ns)?temp1.bgColor = randcolours:temp1.background = randcolours; 
+if (i < n-1){
+ var temp2 = eval(d+a+"dots"+(i+1)+n6r+s);
+ temp1.top = parseInt(temp2.top) + 'px';
+ temp1.left = parseInt(temp2.left) + 'px';
+ } 
+else{
+ temp1.top = y+o + 'px';
+ temp1.left = x + 'px';
+ }
+}
+setTimeout("animate()",100);
+}
+animate();
+// -->
+</script>
+	<table align="center" cellpadding="20px"><tr><td>
+	<img src="rail image.jpg" width="100%">
+	</td></tr></table>
+	<u><i><font color ="Red"><h1 id="test2" align="center" style="background-color: gray; font-size: 40px">Raliway Reservation Form</h1></font></i></u>
+	<form>
+	<link rel="stylesheet" type="text/css" href="Railway Resevation Form.css">
+	<form>
+		<fieldset>
+			<legend bgcolor="blue" style="text-align: center;"><i><h2  bgcolor="blue">RAILWAY RESERVATION FORM</h2></i></legend>
+		<table cellpadding="10px">
+			<tr>
+				<td>Name</td>
+				<td>:</td>
+				<td><input type="text" id="FirstName" placeholder="Enter First Name"><span id="errFirstName"></span>&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" id="MiddelName" placeholder="Enter Middel Name" ><span id="errMiddelName"></span>&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" id="LastName" placeholder="Enter Last Name"><span id="errLastName"></span></td>
+				
+			</tr>
+			<tr>
+				<td>Email</td>
+				<td>:</td>
+				<td><input type="Email" id="Email" placeholder="abc@xyz.com"><br><span id="errEmail"></span></td>
+				<td>Mobile No.</td>
+				<td>:</td>
+				<td><input type="text" id="MobileNo" placeholder="Enter Mobile No."><br><span id="errMobile"></span></td>
+			</tr>
+			<tr>
+				<td>Address</td>
+				<td>:</td>
+				<td colspan="1"><textarea rows="4" id="Address" cols="50"></textarea><br><span id="errAddress"></span></td>
+				<td>Country</td>
+				<td>:</td>
+				<td>
+					<select>
+						<option>India</option>
+						<option>Australia</option>
+						<option>America</option>
+						<option>United Kingdom</option>
+						<option>Japan</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>State</td>
+				<td>:</td>
+				<td>
+					<select>
+						<option>Gujrat</option>
+						<option>Maharastra</option>
+						<option>Delhi</option>
+						<option>Kerela</option>
+						<option>Rajasthan</option>
+					</select>
+				</td>
+				<td>City</td>
+				<td>:</td>
+				<td>
+					<select>
+						<option>Jamnagar</option>
+						<option>Mumbai</option>
+						<option>Ahemdabad</option>
+						<option>Rajkot</option>
+						<option>Benglor</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>Pincode No.</td>
+				<td>:</td>
+				<td><input type="text" id="PincodeNo" placeholder="Enter Pincode No." ><br><span id="errPincodeNo"></span></td>			
+				<td>Occupation</td>
+				<td>:</td>
+				<td>
+					<select>
+						<option>Buisness</option>
+						<option>House Wife</option>
+						<option>Governement</option>
+						<option>Other</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td align="center" colspan="4"><input type="button" value="submit" onclick="checklogin()">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="reset"></td>
+			</tr>
+		</table>
+	</fieldset>
+	</form>
+</body>
+</html>
